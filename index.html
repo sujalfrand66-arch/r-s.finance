@@ -5,6 +5,9 @@
     <title>R/S Finance & Tax Solution</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Basic SEO -->
+    <meta name="description" content="R/S Finance & Tax Solution – GST, Income Tax, Bookkeeping & Business Registrations for small businesses and shops.">
+
     <style>
         /* ---------- RESET ---------- */
         * {
@@ -30,6 +33,9 @@
             text-align: center;
             padding: 6px 10px;
             font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* ---------- NAVBAR ---------- */
@@ -49,6 +55,7 @@
             font-size: 20px;
             font-weight: 800;
             color: #0b4c8c;
+            letter-spacing: 0.5px;
         }
 
         .nav-logo span {
@@ -73,9 +80,11 @@
 
         /* ---------- HERO SECTION ---------- */
         .hero {
+            position: relative;
+            overflow: hidden;
             background-image: linear-gradient(
-                    rgba(5, 39, 82, 0.75),
-                    rgba(5, 39, 82, 0.85)
+                    rgba(5, 39, 82, 0.78),
+                    rgba(5, 39, 82, 0.9)
             ), url("banner.jpg");
             background-size: cover;
             background-position: center;
@@ -84,8 +93,36 @@
             text-align: left;
         }
 
+        /* Banner ke andar animation (wave style) */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: -40px;
+            background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.09), transparent 55%),
+                        radial-gradient(circle at 100% 100%, rgba(255,255,255,0.06), transparent 60%),
+                        radial-gradient(circle at 0% 100%, rgba(0,173,255,0.18), transparent 55%);
+            mix-blend-mode: screen;
+            opacity: 0.85;
+            pointer-events: none;
+            animation: heroWave 14s infinite alternate ease-in-out;
+        }
+
+        @keyframes heroWave {
+            0% {
+                transform: translate3d(-25px, -10px, 0) scale(1.02);
+            }
+            50% {
+                transform: translate3d(18px, 18px, 0) scale(1.05);
+            }
+            100% {
+                transform: translate3d(-10px, 8px, 0) scale(1.03);
+            }
+        }
+
         .hero-inner {
+            position: relative; /* so text upar rahe */
             max-width: 650px;
+            z-index: 2;
         }
 
         .hero-title-top {
@@ -309,9 +346,8 @@
             z-index: 100;
         }
 
-        .wa-float img {
-            width: 28px;
-            height: 28px;
+        .wa-float span {
+            font-size: 26px;
         }
 
         /* ---------- FOOTER ---------- */
@@ -331,7 +367,7 @@
                 gap: 8px;
             }
             .hero {
-                padding: 50px 7% 55px;
+                padding: 55px 7% 60px;
                 text-align: left;
             }
             .hero h1 {
@@ -339,6 +375,10 @@
             }
             .hero-inner {
                 max-width: 100%;
+            }
+            .nav-menu {
+                gap: 14px;
+                font-size: 13px;
             }
         }
 
@@ -348,7 +388,7 @@
 
     <!-- TOP BAR -->
     <div class="top-bar">
-        R/S Finance & Tax Solution – GST • Income Tax • Bookkeeping • Registrations
+        R/S Finance &amp; Tax Solution – GST • Income Tax • Bookkeeping • Registrations
     </div>
 
     <!-- NAVBAR -->
@@ -365,16 +405,16 @@
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-inner">
-            <div class="hero-title-top">Expert Tax & Compliance Partner</div>
+            <div class="hero-title-top">Expert Tax &amp; Compliance Partner</div>
             <h1>Your Trusted Partner For <span>Legal &amp; Tax Solutions</span> In India</h1>
             <p class="hero-sub">
-                From GST & Income Tax Return Filing to Complete Bookkeeping & Business Registrations –
+                From GST &amp; Income Tax Return Filing to Complete Bookkeeping &amp; Business Registrations –
                 we help you stay compliant and tension-free.
             </p>
 
             <div class="hero-buttons">
                 <a class="btn-primary" href="https://wa.me/919983853091" target="_blank">
-                    💼 Talk To Sujal (CA Support)
+                    💼 Talk To Sujal (GST Expert)
                 </a>
                 <a class="btn-outline" href="https://wa.me/919257007044" target="_blank">
                     📞 Talk To Rohan (Support)
@@ -385,7 +425,7 @@
 
     <!-- SERVICES -->
     <section id="services">
-        <h2 class="section-title">End-To-End Business Setup & Compliance Assistance</h2>
+        <h2 class="section-title">End-To-End Business Setup &amp; Compliance Assistance</h2>
         <p class="section-sub">
             Easy &amp; Affordable services tailored for small businesses, shops and startups.
         </p>
@@ -517,8 +557,7 @@
 
     <!-- FLOATING WHATSAPP -->
     <a class="wa-float" href="https://wa.me/919983853091" target="_blank" aria-label="Chat on WhatsApp">
-        <!-- simple whatsapp icon using emoji image alternative -->
-        <span style="font-size:26px;">💬</span>
+        <span>💬</span>
     </a>
 
     <!-- FOOTER -->
